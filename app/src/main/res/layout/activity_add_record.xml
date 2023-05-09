@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddRecordActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backArrowBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Blood Pressure Tracker"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/backArrowBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoBloodPressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/edit_text_button"
+        app:layout_constraintTop_toBottomOf="@id/titleBarLayout">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Normal Blood Pressure"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/info_icons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/title120"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="SYS  120 and DIA 80"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoBloodPressure" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title120">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/blue_card"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:backgroundTint="@color/blue"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:layout_constraintEnd_toStartOf="@+id/normal_card"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/transparent"
+            app:strokeWidth="@dimen/_2sdp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/normal_card"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:backgroundTint="@color/main_color"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:layout_constraintEnd_toStartOf="@+id/modrate_card"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/blue_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/black"
+            app:strokeWidth="@dimen/_2sdp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/modrate_card"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:backgroundTint="@color/green_yellow"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:layout_constraintEnd_toStartOf="@+id/yellow_card"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/normal_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/transparent"
+            app:strokeWidth="@dimen/_2sdp"/>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/yellow_card"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:backgroundTint="@color/yellow"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:layout_constraintEnd_toStartOf="@+id/orange_card"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/modrate_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/transparent"
+            app:strokeWidth="@dimen/_2sdp"/>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/orange_card"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:backgroundTint="@color/orange"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:layout_constraintEnd_toStartOf="@+id/red_card"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/yellow_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/transparent"
+            app:strokeWidth="@dimen/_2sdp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/red_card"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:backgroundTint="@color/red"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/orange_card"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/transparent"
+            app:strokeWidth="@dimen/_2sdp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Rest assured! Your Blood pressure is in great\nCondition, try to keep it!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title120" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/addNoteBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bpPickerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:id="@+id/systolic"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/number_picker_background_2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Systolic\n(mmHg)"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/dystolic"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/linewhite"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/systolic"
+                    app:layout_constraintStart_toStartOf="@+id/systolic"
+                    app:layout_constraintTop_toBottomOf="@id/systolic" />
+
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/systolic_number_picker"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/number_picker_background1"
+                    app:layout_constraintEnd_toEndOf="@id/linewhite"
+                    app:layout_constraintStart_toStartOf="@id/linewhite"
+                    app:layout_constraintTop_toBottomOf="@id/linewhite"
+                    app:np_dividerColor="@color/white"
+                    app:np_height="180dp"
+                    app:np_max="300"
+                    app:np_min="20"
+                    app:np_selectedTextColor="@color/black"
+                    app:np_selectedTextSize="@dimen/_15sdp"
+                    app:np_textColor="@color/black"
+                    app:np_textSize="@dimen/_14sdp"
+                    app:np_value="120"
+                    app:np_width="64dp" />
+
+
+                <TextView
+                    android:id="@+id/dystolic"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/number_picker_background_2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Diastolic\n(mmHg)"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/pulse"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/systolic"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/linewhite2"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/dystolic"
+                    app:layout_constraintStart_toStartOf="@id/dystolic"
+                    app:layout_constraintTop_toBottomOf="@id/dystolic" />
+
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/diastolic_number_picker"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/number_picker_background1"
+                    app:layout_constraintEnd_toEndOf="@id/linewhite2"
+                    app:layout_constraintStart_toStartOf="@id/linewhite2"
+                    app:layout_constraintTop_toBottomOf="@id/linewhite2"
+                    app:np_dividerColor="@color/white"
+                    app:np_height="180dp"
+                    app:np_max="300"
+                    app:np_min="20"
+                    app:np_selectedTextColor="@color/black"
+                    app:np_selectedTextSize="@dimen/_15sdp"
+                    app:np_textColor="@color/black"
+                    app:np_textSize="@dimen/_14sdp"
+                    app:np_value="80"
+                    app:np_width="64dp" />
+
+
+                <TextView
+                    android:id="@+id/pulse"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/number_picker_background_2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Pulse\n(BPM)"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/dystolic"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/linewhite3"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/pulse"
+                    app:layout_constraintStart_toStartOf="@id/pulse"
+                    app:layout_constraintTop_toBottomOf="@id/pulse" />
+
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/pulse_number_picker"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/number_picker_background1"
+                    app:layout_constraintEnd_toEndOf="@id/linewhite3"
+                    app:layout_constraintStart_toStartOf="@id/linewhite3"
+                    app:layout_constraintTop_toBottomOf="@id/linewhite3"
+                    app:np_dividerColor="@color/white"
+                    app:np_height="180dp"
+                    app:np_max="200"
+                    app:np_min="0"
+                    app:np_selectedTextColor="@color/black"
+                    app:np_selectedTextSize="@dimen/_15sdp"
+                    app:np_textColor="@color/black"
+                    app:np_textSize="@dimen/_14sdp"
+                    app:np_value="72"
+                    app:np_width="64dp"
+                    tools:layout_editor_absoluteX="206dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bpPickerLayout">
+
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:text="Date"
+                    android:textColor="@color/main_color"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/clander"
+                    app:layout_constraintStart_toEndOf="@id/textView4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/time_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:text="Time"
+                    android:textColor="@color/main_color"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date_picker" />
+
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:src="@drawable/clock"
+                    app:layout_constraintStart_toEndOf="@+id/time_txt"
+                    app:layout_constraintTop_toBottomOf="@id/date_picker" />
+
+
+                <DatePicker
+                    android:id="@+id/date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/number_picker_background"
+                    android:calendarTextColor="@color/black"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    android:padding="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+                <TimePicker
+                    android:id="@+id/time_picker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/number_picker_background"
+                    android:padding="@dimen/_15sdp"
+                    android:timePickerMode="spinner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/time_txt" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <TextView
+        android:id="@+id/addNoteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="@dimen/_10sdp"
+        android:text="Note +"
+        android:textColor="@color/main_color"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintBottom_toTopOf="@id/save_record_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/save_record_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/edit_text_button"
+        android:text="Add Record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

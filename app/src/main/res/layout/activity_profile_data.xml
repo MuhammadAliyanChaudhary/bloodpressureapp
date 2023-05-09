@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ProfileDataActivity">
+
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_16sdp"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/editProfilePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:elevation="@dimen/_3sdp"
+        android:src="@drawable/elipse"
+        app:layout_constraintBottom_toBottomOf="@+id/userProfileImage"
+        app:layout_constraintEnd_toEndOf="@+id/userProfileImage" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:src="@drawable/edit_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/editProfilePhoto"
+        app:layout_constraintEnd_toEndOf="@+id/editProfilePhoto"
+        app:layout_constraintStart_toStartOf="@+id/editProfilePhoto"
+        app:layout_constraintTop_toTopOf="@+id/editProfilePhoto" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userProfileImage"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="@dimen/_25sdp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/main_color"
+        android:src="@drawable/profile_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/userProfileImage">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userProfileImage">
+
+            <TextView
+                android:id="@+id/yourNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/your_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/userNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/edit_text_custom"
+                android:hint="John Parker"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textCursorDrawable="@drawable/text_cursor_drawable"
+                android:textSize="@dimen/_13sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/yourNameTv" />
+
+
+            <TextView
+                android:id="@+id/drNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/dr_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userNameET" />
+
+            <EditText
+                android:id="@+id/drNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/edit_text_custom"
+                android:hint="Mr. James "
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/text_cursor_drawable"
+                android:maxLines="1"
+                android:textSize="@dimen/_13sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/drNameTv" />
+
+            <TextView
+                android:id="@+id/ageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/age"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/drNameET" />
+
+            <EditText
+                android:id="@+id/userAgeET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/edit_text_custom"
+                android:hint="45"
+                android:textCursorDrawable="@drawable/text_cursor_drawable"
+                android:textSize="@dimen/_13sdp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ageTv" />
+
+
+            <TextView
+                android:id="@+id/heightTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/height"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userAgeET" />
+
+            <EditText
+                android:id="@+id/userHeightET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/edit_text_custom"
+                android:hint="165.43"
+                android:textCursorDrawable="@drawable/text_cursor_drawable"
+                android:textSize="@dimen/_13sdp"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/heightUnitSpinner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/heightTv" />
+
+
+            <Spinner
+                android:id="@+id/heightUnitSpinner"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/edit_text_custom"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="Cm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/heightTv" />
+
+
+            <Spinner
+                android:id="@+id/weightUnit"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/edit_text_custom"
+                android:paddingHorizontal="@dimen/_10sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weightTv" />
+
+            <TextView
+                android:id="@+id/weightTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/weight"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userHeightET" />
+
+            <EditText
+                android:id="@+id/userWeightET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/edit_text_custom"
+                android:hint="80"
+                android:textCursorDrawable="@drawable/text_cursor_drawable"
+                android:textSize="@dimen/_13sdp"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/weightUnit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weightTv" />
+
+
+            <TextView
+                android:id="@+id/genderTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/gender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userWeightET" />
+
+
+            <RadioGroup
+                android:id="@+id/radioBtGenderSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genderTv">
+
+                <RadioButton
+                    android:id="@+id/male_checked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:buttonTint="@color/main_color"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="Male"
+                    android:textSize="@dimen/_10sdp" />
+
+                <RadioButton
+                    android:id="@+id/female_checked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:buttonTint="@color/main_color"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="Female"
+
+
+                    />
+
+                <RadioButton
+                    android:id="@+id/other_checked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:buttonTint="@color/main_color"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="Other"
+
+                    />
+
+
+            </RadioGroup>
+
+
+            <Button
+                android:id="@+id/profile_save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_button"
+                android:text="@string/save"
+                android:clickable="true"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioBtGenderSelector" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
